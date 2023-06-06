@@ -30,13 +30,17 @@
                         include_once("views/adminfooter.php");
                     break;
 
-                    case '/adduser':
-                        // echo "vala";
-                        // exit;
+                    case '/allluser':
                         include_once("views/adminheader.php");
-                        include_once("views/add_user.php");
+                        include_once("views/alluserlist.php");
                         include_once("views/adminfooter.php");
                     break;
+
+                    // case '/editbyid':
+                    //     include_once("views/adminheader.php");
+                    //     include_once("views/edit_user.php");
+                    //     include_once("views/adminfooter.php");
+                    // break;
                     
 
                     default:

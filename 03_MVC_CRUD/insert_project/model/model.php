@@ -1,29 +1,19 @@
 <?php
-    
     date_default_timezone_set("Asia/Kolkata");
-
-    function dd($a){
-        echo "<pre>";
-        print_r($a);
-        echo "<pre>";    
-    }
+    // function dd($a){
+    //     echo "<pre>";
+    //     print_r($a);
+    //     echo "<pre>";    
+    // }
 
     class model {
-
-        // $connection = new mysqli("localhost","root","","record");
-        // public $connection = new mysqli("localhost","root","","record"); new xpression are not supported in this  contex
         public $connection="";
         
         public function __construct(){
-            // $this->connection = new mysqli("localhost","root","","rcord");
             try {
-
                 $this->connection = new mysqli("localhost","root","","z_drivin");
-                // echo "connection successfully <br><br>";
-
             }catch(Exception $e) {
                 // dd($e->getMessage());
-
                 if(!file_exists("log")){
                     mkdir("log");
                 }
@@ -62,13 +52,7 @@
                 file_put_contents($file_name,$errormess,FILE_APPEND);
                 exit;
             }
-
-            // if($query_execute > 0){
-            //     echo "deta inserted";
-            // }else{
-            //     echo "error while inserting";
-            // }
-
+            
             if($query_execute > 0){
                 $Response['Code'] = 1;
                 $Response['Data'] = 1;

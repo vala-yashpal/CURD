@@ -17,10 +17,35 @@
                     case '/insert':
                         $data = json_decode(file_get_contents('php://input') );
                         $array = (array) $data;
-                        
                         $ragister_user = $this->insert("register",$array);
                         echo json_encode($ragister_user);
                     break;
+
+                    case '/getdata':
+                        $result = $this->select('register');
+                        echo json_encode($result);
+                    break;
+
+                    case '/editbyid':
+                        $detabyid = $this->select('register',array("id"=>$_REQUEST['id']));
+                        echo json_encode($detabyid);
+                    break;
+
+                    case '/updatebyid':
+
+                        $data = json_decode(file_get_contents('php://input') );
+                        $id=$_REQUEST;
+                        $array = (array) $data;
+                        $updatetodo = $this->update("register",$array,$id);
+                        echo json_encode($updatetodo);
+                    break;
+
+                    case '/delete':
+                        $id=$_REQUEST;
+                        $deletetodo = $this->delete("register",$id);
+                        echo json_encode($deletetodo);
+                    break;
+
 
                     default:
                         echo "<h2>welcome to our api success</h2>";

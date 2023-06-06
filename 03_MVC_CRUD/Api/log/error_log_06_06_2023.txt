@@ -1,0 +1,4 @@
+
+error_message >> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  id = '2'' at line 1
+error_datetime >> 06-Jun-2023 11:23:04 AM
+>>===============================================<<

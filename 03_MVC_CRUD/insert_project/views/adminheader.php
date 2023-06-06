@@ -37,8 +37,7 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">User Components:</h6>
-                            <a class="collapse-item" href="adduser">User_Details</a>
-                            <a class="collapse-item" href="allusers">All_User</a>
+                            <a class="collapse-item" href="allluser">All_User</a>
                         </div>
                     </div>
                 </li>
