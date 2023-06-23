@@ -1,0 +1,783 @@
+<script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.43002" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.43002" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.43002" type="text/javascript"></script>
+<script defer src="https://cdn02.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.43002" type="text/javascript"></script>
+<script defer src="https://cdn03.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.43002" type="text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+<script src="https://cdn01.jotfor.ms/js/payments/paypalSPB.js?v=3.3.43002" type="text/javascript"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AbO4nZJsmfTgf8GbpnV-AY4382evohAYeDcuwqoAvvrKDDN_qOYa3K5biPFub70U40iPcpl0wtwkkMp2&commit=true&currency=USD&vault=true" data-partner-attribution-id="JotForm_P4P"></script>
+<script src="https://cdn02.jotfor.ms/js/libraries/promise-polyfill.js"></script>
+<script src="https://cdn03.jotfor.ms/js/payments/validategateways.js?v=3.3.43002" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+	JotForm.extendsNewTheme = false;
+	JotForm.singleProduct = false;
+	JotForm.newPaymentUIForNewCreatedForms = false;
+	JotForm.newPaymentUI = true;
+	JotForm.clearFieldOnHide="disable";
+	JotForm.submitError="jumpToFirstError";
+
+	JotForm.init(function(){
+	/*INIT-START*/
+      productID = {"0":"input_7_1001","1":"input_7_1002","2":"input_7_1007","3":"input_7_1008","4":"input_7_1005","5":"input_7_1006"};
+      paymentType = "product";
+      JotForm.setCurrencyFormat('USD',true, 'point');
+      JotForm.totalCounter({"input_7_1001":{"price":"15","quantityField":"input_7_quantity_1001_0","custom_1":"input_7_custom_1001_1","specialPriceField":"input_7_custom_1001_1","specialPriceList":["15","20","25"]},"input_7_1002":{"price":"13","quantityField":"input_7_quantity_1002_0","custom_1":"input_7_custom_1002_1","specialPriceField":"input_7_custom_1002_1","specialPriceList":["13","15","22"]},"input_7_1007":{"price":"15","quantityField":"input_7_quantity_1007_0","custom_1":"input_7_custom_1007_1","specialPriceField":"input_7_custom_1007_1","specialPriceList":["15","20","25"]},"input_7_1008":{"price":"14","quantityField":"input_7_quantity_1008_0","custom_1":"input_7_custom_1008_1","specialPriceField":"input_7_custom_1008_1","specialPriceList":["14","19","24"]},"input_7_1005":{"price":"8","quantityField":"input_7_quantity_1005_0","custom_1":"input_7_custom_1005_1"},"input_7_1006":{"price":"8","quantityField":"input_7_quantity_1006_0","custom_1":"input_7_custom_1006_1"}});
+      $$('.form-product-custom_quantity').each(function(el, i){el.observe('blur', function(){isNaN(this.value) || this.value < 1 ? this.value = '0' : this.value = parseInt(this.value)})});
+      $$('.form-product-custom_quantity').each(function(el, i){el.observe('focus', function(){this.value == 0 ? this.value = '' : this.value})});
+      JotForm.handleProductLightbox();
+      JotForm.paymentProperties = {"payLaterEnabled":"No","payLaterLayout":"text","payLaterLogoType":"inline","payLaterLogoPosition":"left","payLaterTextColor":"black","payLaterTextSize":"10","payLaterBackgroundColor":"blue","payLaterRatio":"20x1","paymentFormProperties":{"products":[{"connectedCategories":"[]","connectedProducts":"[]","customPrice":"","customPriceSource":"0","description":"Ingredients will be written  here.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"1","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Fpizza-assortment-set_1284-20110.jpg\",\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Fpizza-assortment-set_1284-20110 copy 4.jpg\"]","name":"Pizza Neapolitan","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"0,0,0,0,0,0,0,0,0,0","expanded":false},{"type":"custom","name":"Size","properties":"Small\nMedium\nLarge","defaultQuantity":"","specialPricing":true,"expanded":false,"specialPrices":"15,20,25"}],"period":"Monthly","pid":"1001","price":"15","recurringtimes":"No Limit","required":"","setupfee":"","showSubtotal":"1","trial":""},{"connectedCategories":"[]","connectedProducts":"[]","customPrice":"","customPriceSource":"0","description":"Ingredients will be written  here.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"1","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Fpizza-assortment-set_1284-20110 copy 2.jpg\",\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Fslices-pizza_23-2147517737 copy 3.jpg\"]","name":"Pizza Pepperoni","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"0,0,0,0,0,0,0,0,0,0","expanded":false},{"type":"custom","name":"Size","properties":"Small\nMedium\nLarge","defaultQuantity":"","specialPricing":true,"expanded":false,"specialPrices":"13,15,22"}],"period":"Monthly","pid":"1002","price":"13","recurringtimes":"No Limit","required":"","selected":"","setupfee":"","showSubtotal":"0","trial":""},{"connectedCategories":"[]","connectedProducts":"[]","customPrice":"","customPriceSource":"0","description":"Ingredients will be written  here.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"1","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Fpizza-assortment-set_1284-20110 copy.jpg\",\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Fpizza-assortment-set_1284-20110 copy 3.jpg\"]","name":"Pizza Mare e Monti","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"0,0,0,0,0,0,0,0,0,0","expanded":false},{"type":"custom","name":"Size","properties":"Small\nMedium\nLarge","defaultQuantity":"","specialPricing":true,"expanded":false,"specialPrices":"15,20,25"}],"period":"Monthly","pid":"1007","price":"15","recurringtimes":"No Limit","required":"","selected":"","setupfee":"","showSubtotal":"1","trial":""},{"connectedCategories":"[]","connectedProducts":"[]","customPrice":"","customPriceSource":"0","description":"Ingredients will be written  here.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"1","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Fslices-pizza_23-2147517737 copy 4.jpg\"]","name":"Pizza Supreme","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"0,0,0,0,0,0,0,0,0,0","expanded":false},{"type":"custom","name":"Size","properties":"Small\nMedium\nLarge","defaultQuantity":"","specialPricing":true,"expanded":false,"specialPrices":"14,19,24"}],"period":"Monthly","pid":"1008","price":"14","recurringtimes":"No Limit","required":"","selected":"","setupfee":"","showSubtotal":"1","trial":""},{"connectedCategories":"[]","connectedProducts":"[]","customPrice":"","customPriceSource":"0","description":"Ingredients will be written  here.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Ftransparent-plastic-glass-drink-juice-with-straw_1284-32543.jpg\"]","name":"Orange Juice","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"0,0,0,0,0,0,0,0,0,0","expanded":false},{"type":"custom","name":"Extra","properties":"None\nExtra Ice","defaultQuantity":"","specialPricing":false,"expanded":false,"specialPrices":""}],"period":"Monthly","pid":"1005","price":"8","recurringtimes":"No Limit","required":"","selected":"","setupfee":"","showSubtotal":"0","trial":""},{"connectedCategories":"[]","connectedProducts":"[]","customPrice":"","customPriceSource":"0","description":"Ingredients will be written  here.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Flemon-lime-lemonade-lemonade-green-illustration_1416-918.jpg\",\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002FLaurelWood\u002Fform_files\u002Flemon-lime-lemonade-lemonade-green-illustration_1416-918 copy.jpg\"]","name":"Lemonade","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"0,0,0,0,0,0,0,0,0,0","expanded":false},{"type":"custom","name":"Options","properties":"Normal\nPink","defaultQuantity":"","specialPricing":false,"expanded":false,"specialPrices":""}],"period":"Monthly","pid":"1006","price":"8","recurringtimes":"No Limit","required":"","selected":"","setupfee":"","showSubtotal":"0","trial":""}]}}
+
+ JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+ JotForm.calendarOther = {"today":"Today"};
+ var languageOptions = document.querySelectorAll('#langList li'); 
+ for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("5", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":"","countSelectedDaysOnly":false}); }, 0); });
+ } 
+ JotForm.onTranslationsFetch(function() { JotForm.setCalendar("5", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":"","countSelectedDaysOnly":false}); });
+ JotForm.formatDate({date:(new Date()), dateField:$("id_"+5)});
+      JotForm.displayLocalTime("input_6_hourSelect", "input_6_minuteSelect","input_6_ampm", "input_6_timeInput", true);
+      JotForm.setPhoneMaskingValidator( 'input_11_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+if (window.JotForm && JotForm.accessible) $('input_8').setAttribute('tabindex',0);
+      JotForm.alterTexts(undefined);
+      JotForm.alterTexts(undefined, true);
+	/*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,{"name":"pizzaOrder","qid":"1","text":"Pizza Order Form","type":"control_head"},{"name":"submit2","qid":"2","text":"Order","type":"control_button"},{"name":"name","qid":"3","text":"Name","type":"control_fullname"},null,{"name":"pickupDate","qid":"5","text":"Pickup Date","type":"control_datetime"},{"name":"pickupTime","qid":"6","text":"Pickup Time","type":"control_time"},{"name":"menu","qid":"7","text":"Menu","type":"control_paypalSPB"},{"name":"additionalNotes","qid":"8","text":"Additional Notes","type":"control_textarea"},null,null,{"name":"phoneNumber","qid":"11","text":"Phone Number","type":"control_phone"},{"name":"email","qid":"12","subLabel":"example@example.com","text":"Email","type":"control_email"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,{"name":"pizzaOrder","qid":"1","text":"Pizza Order Form","type":"control_head"},{"name":"submit2","qid":"2","text":"Order","type":"control_button"},{"name":"name","qid":"3","text":"Name","type":"control_fullname"},null,{"name":"pickupDate","qid":"5","text":"Pickup Date","type":"control_datetime"},{"name":"pickupTime","qid":"6","text":"Pickup Time","type":"control_time"},{"name":"menu","qid":"7","text":"Menu","type":"control_paypalSPB"},{"name":"additionalNotes","qid":"8","text":"Additional Notes","type":"control_textarea"},null,null,{"name":"phoneNumber","qid":"11","text":"Phone Number","type":"control_phone"},{"name":"email","qid":"12","subLabel":"example@example.com","text":"Email","type":"control_email"}]);}, 20); 
+</script>
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.43002&themeRevisionID=5eb3b4ae85bd2e1e2966db96"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.43002" />
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.43002" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/donationBox.css?v=3.3.43002">
+<style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+
+.form-all {
+  font-family: "Inter", sans-serif;
+}
+/* 2 - FORM WIDTH */
+.form-all {
+  max-width: 710px;
+}
+/* 5 - FONT SIZE */
+.form-all {
+  font-size: 16px;
+}
+/* 17 - INPUT WIDTHS */
+/*  20 - FORM PADDING */
+.form-section {
+  padding: 0px 38px;
+}
+.form-textbox,
+.form-textarea,
+.form-radio-other-input,
+.form-checkbox-other-input,
+.form-captcha input,
+.form-spinner input {
+  background-color: #ffffff;
+}
+li[data-type="control_textbox"] div[data-layout="half"],
+li[data-type="control_dropdown"] div[data-layout="half"],
+li[data-type="control_email"] div[data-layout="half"],
+li[data-type="control_number"] div[data-layout="half"],
+li[data-type="control_phone"] div[data-layout="half"],
+li[data-type="control_datetime"] div[data-layout="half"],
+li[data-type="control_signature"] div[data-layout="half"] {
+  width: 100% !important;
+  max-width: 648px;
+}
+/* 10 - LINE SPACING */
+.form-line {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* 11 - LINE PADDING */
+/* LABEL STYLE */
+[data-type="control_dropdown"] .form-input,
+[data-type="control_birthdate"] .form-input,
+[data-type="control_time"] .form-input,
+[data-type="control_dropdown"] .form-input-wide,
+[data-type="control_birthdate"] .form-input-wide,
+[data-type="control_time"] .form-input-wide {
+  width: 100% !important;
+  max-width: 648px;
+}
+[data-type="control_dropdown"] .form-dropdown {
+  width: 100% !important;
+  max-width: 648px;
+}
+/* 12 - ROUNDED INPUTS */
+.supernova .form-all,
+.form-all {
+  border-radius: 20px;
+}
+.form-section:first-child {
+  border-radius: 20px 20px 0 0;
+}
+.form-section:last-child {
+  border-radius: 0 0 20px 20px;
+}
+.form-checkbox-item label,
+.form-checkbox-item span,
+.form-radio-item label,
+.form-radio-item span {
+  color: #404a64;
+}
+.form-radio-item,
+.form-checkbox-item {
+  padding-bottom: 0px !important;
+}
+.form-radio-item:last-child,
+.form-checkbox-item:last-child {
+  padding-bottom: 0;
+}
+.form-single-column .form-checkbox-item,
+.form-single-column .form-radio-item {
+  width: 100%;
+}
+.form-checkbox-item .editor-container div,
+.form-radio-item .editor-container div {
+  position: relative;
+}
+.form-checkbox-item .editor-container div:before,
+.form-radio-item .editor-container div:before {
+  display: inline-block;
+  vertical-align: middle;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+.form-checkbox-item input,
+.form-radio-item input {
+  margin-top: 2px;
+}
+.form-checkbox:checked + label:before,
+.form-checkbox:checked + span:before {
+  background-color: #2e69ff;
+  border-color: #2e69ff;
+}
+.form-radio:checked + label:before,
+.form-radio:checked + span:before {
+  border-color: #2e69ff;
+}
+.form-radio:checked + label:after,
+.form-radio:checked + span:after {
+  background-color: #2e69ff;
+}
+.form-checkbox:hover + label:before,
+.form-checkbox:hover + span:before,
+.form-radio:hover + label:before,
+.form-radio:hover + span:before {
+  border-color: rgba(46, 105, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(46, 105, 255, 0.25);
+}
+.form-checkbox:focus + label:before,
+.form-checkbox:focus + span:before,
+.form-radio:focus + label:before,
+.form-radio:focus + span:before {
+  border-color: #2e69ff;
+  box-shadow: 0 0 0 3px rgba(46, 105, 255, 0.25);
+}
+.submit-button {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: inherit;
+}
+.submit-button {
+  min-width: 180px;
+}
+.form-all .form-pagebreak-back,
+.form-all .form-pagebreak-next {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+.form-all .form-pagebreak-back,
+.form-all .form-pagebreak-next {
+  min-width: 128px;
+}
+li[data-type="control_image"] div {
+  text-align: left;
+}
+li[data-type="control_image"] img {
+  border: none;
+  border-width: 0px !important;
+  border-style: solid !important;
+  border-color: false !important;
+}
+.supernova {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: auto;
+  background-size: cover;
+}
+.supernova {
+  background-image: none;
+}
+#stage {
+  background-image: none;
+}
+/* | */
+.form-all {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  background-repeat: repeat;
+}
+.form-header-group {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+}
+.header-large h1.form-header {
+  font-size: 2em;
+}
+.header-large h2.form-header {
+  font-size: 1.5em;
+}
+.header-large h3.form-header {
+  font-size: 1.17em;
+}
+.header-large h1 + .form-subHeader {
+  font-size: 1em;
+}
+.header-large h2 + .form-subHeader {
+  font-size: .875em;
+}
+.header-large h3 + .form-subHeader {
+  font-size: .75em;
+}
+.header-default h1.form-header {
+  font-size: 2em;
+}
+.header-default h2.form-header {
+  font-size: 1.5em;
+}
+.header-default h3.form-header {
+  font-size: 1.17em;
+}
+.header-default h1 + .form-subHeader {
+  font-size: 1em;
+}
+.header-default h2 + .form-subHeader {
+  font-size: .875em;
+}
+.header-default h3 + .form-subHeader {
+  font-size: .75em;
+}
+.header-small h1.form-header {
+  font-size: 2em;
+}
+.header-small h2.form-header {
+  font-size: 1.5em;
+}
+.header-small h3.form-header {
+  font-size: 1.17em;
+}
+.header-small h1 + .form-subHeader {
+  font-size: 1em;
+}
+.header-small h2 + .form-subHeader {
+  font-size: .875em;
+}
+.header-small h3 + .form-subHeader {
+  font-size: .75em;
+}
+.form-header-group {
+  text-align: center;
+}
+.form-header-group {
+  font-family: "false", sans-serif;
+}
+div.form-header-group.header-large,
+div.form-header-group.hasImage {
+  margin: 0px -38px;
+}
+div.form-header-group.header-large,
+div.form-header-group.hasImage {
+  padding: 0px 0px;
+}
+.form-header-group .form-header,
+.form-header-group .form-subHeader {
+  color: 0;
+}
+.form-header-group {
+  border-bottom: none;
+}
+.form-line-error {
+  overflow: hidden;
+  -webkit-transition-property: none;
+  -moz-transition-property: none;
+  -ms-transition-property: none;
+  -o-transition-property: none;
+  transition-property: none;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  background-color: #fff4f4;
+}
+.form-line-error .form-error-message {
+  background-color: #f23a3c;
+  clear: both;
+  float: none;
+}
+.form-line-error .form-error-message .form-error-arrow {
+  border-bottom-color: #f23a3c;
+}
+.form-line-error input:not(#coupon-input),
+.form-line-error textarea,
+.form-line-error .form-validation-error {
+  border: 1px solid #f23a3c;
+  box-shadow: 0 0 3px #f23a3c;
+}
+.supernova {
+  background-color: #ffffff;
+  background-color: #27272a;
+}
+.supernova body {
+  background-color: transparent;
+}
+.supernova .form-all,
+.form-all {
+  background-color: #ffffff;
+}
+.form-textbox,
+.form-textarea,
+.form-radio-other-input,
+.form-checkbox-other-input,
+.form-captcha input,
+.form-spinner input {
+  background-color: #ffffff;
+}
+.form-matrix-table tr {
+  border-color: #e6e6e6;
+}
+.form-matrix-table tr:nth-child(2n) {
+  background-color: #f2f2f2;
+}
+.form-all {
+  color: #2c3345;
+}
+.form-label-top,
+.form-label-left,
+.form-label-right,
+.form-html {
+  color: #2c3345;
+}
+.form-line-error {
+  overflow: hidden;
+  -webkit-transition-property: none;
+  -moz-transition-property: none;
+  -ms-transition-property: none;
+  -o-transition-property: none;
+  transition-property: none;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  background-color: #fff4f4;
+}
+.form-header-group .form-header,
+.form-header-group .form-subHeader {
+  color: 0;
+}
+.form-line-active {
+  background-color: #ffffe0;
+}
+/* 29 - FORM COLUMNS */
+/*PREFERENCES STYLE*/
+.form-all {
+  margin: 72px auto;
+}
+.form-all:before {
+  content: none;
+}
+/*PREFERENCES STYLE*/
+
+/*__INSPECT_SEPERATOR__*/
+.form-all {
+    border-radius : 12px;
+}
+
+.header-logo-top {
+    width : 100%;
+}
+
+.form-header-group.hasImage.header-large {
+    padding-bottom : 50px;
+    border : 0;
+}
+
+.form-header-group.hasImage.header-large img {
+    border-radius : 12px 12px 0 0;
+}
+
+
+    /* Injected CSS Code */
+</style>
+
+<form class="jotform-form" action="https://submit.jotform.com/submit/231723503664453" method="post" name="form_231723503664453" id="231723503664453" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="231723503664453" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" />
+  <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div style="display:table;width:100%">
+          <div class="form-header-group hasImage header-large" data-imagealign="Top">
+            <div class="header-logo"><img src="https://www.jotform.com/uploads/ugurg/form_files/Pizza-min-2.6437c1bf7574a2.71416330.png" alt="Pizza Order Form" width="319" class="header-logo-top" /></div>
+            <div class="header-text httac htvam">
+              <h1 id="header_1" class="form-header" data-component="header">Pizza Order Form</h1>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_paypalSPB" id="id_7" data-payment="true"><label class="form-label form-label-top" id="label_7" for="input_7"> Menu </label>
+        <div id="cid_7" class="form-input-wide" data-layout="full">
+          <div>
+            <div data-wrapper-react="true" class="product-container-wrapper">
+              <div class="filter-container"></div><input type="hidden" id="use_paypal_button" /><input type="hidden" name="simple_fpc" data-payment_type="paypalSPB" data-component="payment1" value="7" /><input type="hidden" name="payment_transaction_uuid" id="paymentTransactionId" /><input type="hidden" name="payment_total_checksum" id="payment_total_checksum" data-component="payment2" />
+              <div id="image-overlay" class="overlay-content" style="display:none"><img id="current-image" /><span class="lb-prev-button">prev</span><span class="lb-next-button">next</span><span class="lb-close-button">( X )</span><span class="image-overlay-product-container">
+                  <ul class="form-overlay-item" pid="1001" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110.jpg" /></li>
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110 copy 4.jpg" /></li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1002" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110 copy 2.jpg" /></li>
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/slices-pizza_23-2147517737 copy 3.jpg" /></li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1007" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110 copy.jpg" /></li>
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110 copy 3.jpg" /></li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1008" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/slices-pizza_23-2147517737 copy 4.jpg" /></li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1005" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/transparent-plastic-glass-drink-juice-with-straw_1284-32543.jpg" /></li>
+                  </ul>
+                  <ul class="form-overlay-item" pid="1006" hasicon="false" hasimages="true" iconvalue="">
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/lemon-lime-lemonade-lemonade-green-illustration_1416-918.jpg" /></li>
+                    <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/LaurelWood/form_files/lemon-lime-lemonade-lemonade-green-illustration_1416-918 copy.jpg" /></li>
+                  </ul>
+                </span></div>
+              <div data-wrapper-react="true"><span class="form-product-item hover-product-item  show_image show_desc show_option show_subtotal new_ui" categories="non-categorized" pid="1001" aria-labelledby="label_7">
+                  <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                    <div class="p_col">
+                      <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_7_1001" name="q7_menu[][id]" value="1001" aria-label="Select Product: Pizza Neapolitan" />
+                        <div class="checked"></div>
+                        <div class="select_border"></div>
+                      </div>
+                    </div>
+                    <div class="p_image">
+                      <div class="image_area form-product-image-with-options">
+                        <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Pizza Neapolitan" alt="Pizza Neapolitan Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110.jpg" loading="lazy" /></div>
+                        <div class="image_zoom"></div>
+                      </div>
+                    </div>
+                    <div for="input_7_1001" class="form-product-container"><span data-wrapper-react="true">
+                        <div class="title_description"><span class="form-product-name" id="product-name-input_7_1001">Pizza Neapolitan</span><span class="form-product-description" id="product-name-description-input_7_1001">Ingredients will be written here.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_7_1001_price">15.00</span></span></b></span>
+                      </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_quantity_1001_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1001][item_0]" id="input_7_quantity_1001_0" aria-label="Select Quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_custom_1001_1" style="min-height:13px" aria-hidden="false">Size</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1001][item_1]" id="input_7_custom_1001_1" aria-label="Select Size">
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                          </select></span></span><br /><span class="form-special-subtotal"><span class="form-item-subtotal">Item subtotal:</span><span data-wrapper-react="true">$<span id="input_7_1001_item_subtotal">0.00</span></span></span></div>
+                    <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                  </div>
+                </span>
+                <div class="p_item_separator "></div><span class="form-product-item hover-product-item  show_image show_desc show_option new_ui" categories="non-categorized" pid="1002" aria-labelledby="label_7">
+                  <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                    <div class="p_col">
+                      <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_7_1002" name="q7_menu[][id]" value="1002" aria-label="Select Product: Pizza Pepperoni" />
+                        <div class="checked"></div>
+                        <div class="select_border"></div>
+                      </div>
+                    </div>
+                    <div class="p_image">
+                      <div class="image_area form-product-image-with-options">
+                        <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Pizza Pepperoni" alt="Pizza Pepperoni Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110%20copy%202.jpg" loading="lazy" /></div>
+                        <div class="image_zoom"></div>
+                      </div>
+                    </div>
+                    <div for="input_7_1002" class="form-product-container"><span data-wrapper-react="true">
+                        <div class="title_description"><span class="form-product-name" id="product-name-input_7_1002">Pizza Pepperoni</span><span class="form-product-description" id="product-name-description-input_7_1002">Ingredients will be written here.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_7_1002_price">13.00</span></span></b></span>
+                      </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_quantity_1002_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1002][item_0]" id="input_7_quantity_1002_0" aria-label="Select Quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_custom_1002_1" style="min-height:13px" aria-hidden="false">Size</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1002][item_1]" id="input_7_custom_1002_1" aria-label="Select Size">
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                          </select></span></span></div>
+                    <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                  </div>
+                </span>
+                <div class="p_item_separator "></div><span class="form-product-item hover-product-item  show_image show_desc show_option show_subtotal new_ui" categories="non-categorized" pid="1007" aria-labelledby="label_7">
+                  <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                    <div class="p_col">
+                      <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_7_1007" name="q7_menu[][id]" value="1007" aria-label="Select Product: Pizza Mare e Monti" />
+                        <div class="checked"></div>
+                        <div class="select_border"></div>
+                      </div>
+                    </div>
+                    <div class="p_image">
+                      <div class="image_area form-product-image-with-options">
+                        <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Pizza Mare e Monti" alt="Pizza Mare e Monti Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110%20copy.jpg" loading="lazy" /></div>
+                        <div class="image_zoom"></div>
+                      </div>
+                    </div>
+                    <div for="input_7_1007" class="form-product-container"><span data-wrapper-react="true">
+                        <div class="title_description"><span class="form-product-name" id="product-name-input_7_1007">Pizza Mare e Monti</span><span class="form-product-description" id="product-name-description-input_7_1007">Ingredients will be written here.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_7_1007_price">15.00</span></span></b></span>
+                      </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_quantity_1007_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1007][item_0]" id="input_7_quantity_1007_0" aria-label="Select Quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_custom_1007_1" style="min-height:13px" aria-hidden="false">Size</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1007][item_1]" id="input_7_custom_1007_1" aria-label="Select Size">
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                          </select></span></span><br /><span class="form-special-subtotal"><span class="form-item-subtotal">Item subtotal:</span><span data-wrapper-react="true">$<span id="input_7_1007_item_subtotal">0.00</span></span></span></div>
+                    <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                  </div>
+                </span>
+                <div class="p_item_separator "></div><span class="form-product-item hover-product-item  show_image show_desc show_option show_subtotal new_ui" categories="non-categorized" pid="1008" aria-labelledby="label_7">
+                  <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                    <div class="p_col">
+                      <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_7_1008" name="q7_menu[][id]" value="1008" aria-label="Select Product: Pizza Supreme" />
+                        <div class="checked"></div>
+                        <div class="select_border"></div>
+                      </div>
+                    </div>
+                    <div class="p_image">
+                      <div class="image_area form-product-image-with-options">
+                        <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Pizza Supreme" alt="Pizza Supreme Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/LaurelWood/form_files/slices-pizza_23-2147517737%20copy%204.jpg" loading="lazy" /></div>
+                        <div class="image_zoom"></div>
+                      </div>
+                    </div>
+                    <div for="input_7_1008" class="form-product-container"><span data-wrapper-react="true">
+                        <div class="title_description"><span class="form-product-name" id="product-name-input_7_1008">Pizza Supreme</span><span class="form-product-description" id="product-name-description-input_7_1008">Ingredients will be written here.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_7_1008_price">14.00</span></span></b></span>
+                      </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_quantity_1008_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1008][item_0]" id="input_7_quantity_1008_0" aria-label="Select Quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_custom_1008_1" style="min-height:13px" aria-hidden="false">Size</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1008][item_1]" id="input_7_custom_1008_1" aria-label="Select Size">
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                          </select></span></span><br /><span class="form-special-subtotal"><span class="form-item-subtotal">Item subtotal:</span><span data-wrapper-react="true">$<span id="input_7_1008_item_subtotal">0.00</span></span></span></div>
+                    <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                  </div>
+                </span>
+                <div class="p_item_separator "></div><span class="form-product-item hover-product-item  show_image show_desc show_option new_ui" categories="non-categorized" pid="1005" aria-labelledby="label_7">
+                  <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                    <div class="p_col">
+                      <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_7_1005" name="q7_menu[][id]" value="1005" aria-label="Select Product: Orange Juice" />
+                        <div class="checked"></div>
+                        <div class="select_border"></div>
+                      </div>
+                    </div>
+                    <div class="p_image">
+                      <div class="image_area form-product-image-with-options">
+                        <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Orange Juice" alt="Orange Juice Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/LaurelWood/form_files/transparent-plastic-glass-drink-juice-with-straw_1284-32543.jpg" loading="lazy" /></div>
+                        <div class="image_zoom"></div>
+                      </div>
+                    </div>
+                    <div for="input_7_1005" class="form-product-container"><span data-wrapper-react="true">
+                        <div class="title_description"><span class="form-product-name" id="product-name-input_7_1005">Orange Juice</span><span class="form-product-description" id="product-name-description-input_7_1005">Ingredients will be written here.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_7_1005_price">8.00</span></span></b></span>
+                      </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_quantity_1005_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1005][item_0]" id="input_7_quantity_1005_0" aria-label="Select Quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_custom_1005_1" style="min-height:13px" aria-hidden="false">Extra</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1005][item_1]" id="input_7_custom_1005_1" aria-label="Select Extra">
+                            <option value="None">None</option>
+                            <option value="Extra Ice">Extra Ice</option>
+                          </select></span></span></div>
+                    <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                  </div>
+                </span>
+                <div class="p_item_separator "></div><span class="form-product-item hover-product-item  show_image show_desc show_option new_ui" categories="non-categorized" pid="1006" aria-labelledby="label_7">
+                  <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                    <div class="p_col">
+                      <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_7_1006" name="q7_menu[][id]" value="1006" aria-label="Select Product: Lemonade" />
+                        <div class="checked"></div>
+                        <div class="select_border"></div>
+                      </div>
+                    </div>
+                    <div class="p_image">
+                      <div class="image_area form-product-image-with-options">
+                        <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Lemonade" alt="Lemonade Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/LaurelWood/form_files/lemon-lime-lemonade-lemonade-green-illustration_1416-918.jpg" loading="lazy" /></div>
+                        <div class="image_zoom"></div>
+                      </div>
+                    </div>
+                    <div for="input_7_1006" class="form-product-container"><span data-wrapper-react="true">
+                        <div class="title_description"><span class="form-product-name" id="product-name-input_7_1006">Lemonade</span><span class="form-product-description" id="product-name-description-input_7_1006">Ingredients will be written here.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_7_1006_price">8.00</span></span></b></span>
+                      </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_quantity_1006_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1006][item_0]" id="input_7_quantity_1006_0" aria-label="Select Quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                          </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_7_custom_1006_1" style="min-height:13px" aria-hidden="false">Options</label><span class="select_cont"><select class="form-dropdown" name="q7_menu[special_1006][item_1]" id="input_7_custom_1006_1" aria-label="Select Options">
+                            <option value="Normal">Normal</option>
+                            <option value="Pink">Pink</option>
+                          </select></span></span></div>
+                    <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                  </div>
+                </span>
+                <div class="payment_footer new_ui ">
+                  <div class="total_area">
+                    <div class="form-payment-total">
+                      <div id="total-text">Total</div>
+                      <div class="form-payment-price"><span data-wrapper-react="true">$<span id="payment_total">0.00</span></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><input type="text" name="cc_paypalSPB_orderID" id="cc_paypalSPB_orderID" class="form-textbox" readonly="" aria-label="PayPal Checkout Buttons" tabindex="-1" style="opacity:0;z-index:-1;pointer-events:none;position:absolute;width:0;height:0;left:-400px;top:-400px;padding:0;border:none;margin:0" /><input type="text" name="cc_paypalSPB_payerID" id="cc_paypalSPB_payerID" class="form-textbox" readonly="" aria-label="PayPal Checkout Buttons" tabindex="-1" style="opacity:0;z-index:-1;pointer-events:none;position:absolute;width:0;height:0;left:-400px;top:-400px;padding:0;border:none;margin:0" />
+            <div class="complete-payment-prompt" style="display:none">The payment is ready! It will be completed once you submit the form.</div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_datetime" id="id_5"><label class="form-label form-label-top" id="label_5" for="lite_mode_5"> Pickup Date </label>
+        <div id="cid_5" class="form-input-wide" data-layout="half">
+          <div data-wrapper-react="true">
+            <div style="display:none"><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[limitDate]" id="month_5" name="q5_pickupDate[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="06" autoComplete="off" aria-labelledby="label_5 sublabel_5_month" /><span class="date-separate" aria-hidden="true"> .</span><label class="form-sub-label" for="month_5" id="sublabel_5_month" style="min-height:13px" aria-hidden="false">Month</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="currentDate form-textbox validate[limitDate]" id="day_5" name="q5_pickupDate[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="22" autoComplete="off" aria-labelledby="label_5 sublabel_5_day" /><span class="date-separate" aria-hidden="true"> .</span><label class="form-sub-label" for="day_5" id="sublabel_5_day" style="min-height:13px" aria-hidden="false">Day</label></span><span class="form-sub-label-container" style="vertical-align:top"><input type="tel" class="form-textbox validate[limitDate]" id="year_5" name="q5_pickupDate[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="2023" autoComplete="off" aria-labelledby="label_5 sublabel_5_year" /><label class="form-sub-label" for="year_5" id="sublabel_5_year" style="min-height:13px" aria-hidden="false">Year</label></span></div><span class="form-sub-label-container" style="vertical-align:top"><input type="text" class="form-textbox validate[limitDate, validateLiteDate]" id="lite_mode_5" size="12" data-maxlength="12" maxLength="12" data-age="" value="06.22.2023" data-format="mmddyyyy" data-seperator="." placeholder="MM.DD.YYYY" autoComplete="off" aria-labelledby="label_5 sublabel_5_litemode" /><img class="showAutoCalendar newDefaultTheme-dateIcon icon-liteMode" alt="Pick a Date" id="input_5_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" /><label class="form-sub-label" for="lite_mode_5" id="sublabel_5_litemode" style="min-height:13px" aria-hidden="false">Date</label></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_time" id="id_6"><label class="form-label form-label-top" id="label_6" for="input_6_hourSelect"> Pickup Time </label>
+        <div id="cid_6" class="form-input-wide" data-layout="full">
+          <div data-wrapper-react="true">
+            <div class="time-wrapper"><span class="form-sub-label-container hasAMPM" style="vertical-align:top"><input type="text" class="time-dropdown form-textbox" id="input_6_timeInput" name="q6_pickupTime[timeInput]" placeholder="HH : MM" aria-labelledby="label_6 sublabel_6_hour" data-mask="hh:MM" value="" data-version="v2" /><input type="hidden" class="form-hidden-time" id="input_6_hourSelect" name="q6_pickupTime[hourSelect]" /><input type="hidden" class="form-hidden-time" id="input_6_minuteSelect" name="q6_pickupTime[minuteSelect]" /><label data-seperate-translate="true" class="form-sub-label" for="input_6_timeInput" id="sublabel_6_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label></span></div>
+            <div class="time-wrapper"><span class="form-sub-label-container" style="vertical-align:top"><select class="time-dropdown form-dropdown" id="input_6_ampm" name="q6_pickupTime[ampm]" data-component="time-ampm" aria-labelledby="label_6 sublabel_6_ampm">
+                  <option selected="" value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select><label class="form-sub-label" for="input_6_ampm" id="sublabel_6_ampm" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false">AM/PM Option</label></span></div><span class="form-sub-label-container until-wrapper" style="vertical-align:top">
+              <div class="until-text" tabindex="0" id="until_6">Until</div><label class="form-sub-label" for="until_6" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false">until</label>
+            </span>
+            <div class="time-wrapper"><span class="form-sub-label-container hasAMPM" style="vertical-align:top"><input type="text" class="time-dropdown form-textbox" id="input_6_timeInputRange" name="q6_pickupTime[timeInputRange]" placeholder="HH : MM" aria-labelledby="label_6 sublabel_6_hourRange" data-mask="hh:MM" value="" data-version="v2" /><input type="hidden" class="form-hidden-time" id="input_6_hourSelectRange" name="q6_pickupTime[hourSelectRange]" /><input type="hidden" class="form-hidden-time" id="input_6_minuteSelectRange" name="q6_pickupTime[minuteSelectRange]" /><label data-seperate-translate="true" class="form-sub-label" for="input_6_timeInputRange" id="sublabel_6_hourRange" style="min-height:13px" aria-hidden="false">Hour Minutes</label></span></div>
+            <div class="time-wrapper"><span class="form-sub-label-container" style="vertical-align:top"><select class="time-dropdown form-dropdown" id="input_6_ampmRange" name="q6_pickupTime[ampmRange]" data-component="time-ampm-range" aria-labelledby="label_6 sublabel_6_ampmRange">
+                  <option selected="" value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select><label class="form-sub-label" for="input_6_ampmRange" id="sublabel_6_ampmRange" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false">AM/PM Option</label></span></div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_fullname" id="id_3"><label class="form-label form-label-top" id="label_3" for="first_3"> Name </label>
+        <div id="cid_3" class="form-input-wide" data-layout="full">
+          <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_3" name="q3_name[first]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" /><label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_3" name="q3_name[last]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" /><label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_email" id="id_12"><label class="form-label form-label-top" id="label_12" for="input_12"> Email </label>
+        <div id="cid_12" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_12" name="q12_email" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_12 sublabel_input_12" /><label class="form-sub-label" for="input_12" id="sublabel_input_12" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_11"><label class="form-label form-label-top" id="label_11" for="input_11_full"> Phone Number </label>
+        <div id="cid_11" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_11_full" name="q11_phoneNumber[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue="" autoComplete="section-input_11 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_11" /></span> </div>
+      </li>
+      <li class="form-line" data-type="control_textarea" id="id_8"><label class="form-label form-label-top form-label-auto" id="label_8" for="input_8"> Additional Notes </label>
+        <div id="cid_8" class="form-input-wide" data-layout="full"> <textarea id="input_8" class="form-textarea" name="q8_additionalNotes" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_8"></textarea> </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_2">
+        <div id="cid_2" class="form-input-wide" data-layout="full">
+          <div data-align="center" class="form-buttons-wrapper form-buttons-center paypal-submit-container  jsTest-button-wrapperField">
+            <div class="paypal-submit-button-wrapper"></div>
+            <div class="paypal-paylater-messages" style="order:2;width:100%;display:block">
+              <div class="message-area"></div>
+            </div><button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Order</button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
+    </ul>
+  </div>
+  <script>
+    JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+    JotForm.poweredByText = "Powered by Jotform";
+  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="231723503664453" />
+  <script type="text/javascript">
+    var all_spc = document.querySelectorAll("form[id='231723503664453'] .si" + "mple" + "_spc");
+    for (var i = 0; i < all_spc.length; i++)
+    {
+      all_spc[i].value = "231723503664453-231723503664453";
+    }
+  </script>
+  <div class="formFooter-heightMask"></div>
+  <div class="formFooter f6 branding21" style="display: flex !important;">
+    <div class="formFooter-wrapper formFooter-leftSide">
+      <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=231723503664453&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink">
+        <img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo2021/jotform-logo-white.svg" alt="Jotform Logo" style="height: 44px;">
+      </a>
+    </div>
+    <div class="formFooter-wrapper formFooter-rightSide">
+      <span class="formFooter-text">Now create your own Jotform - It's free!</span>
+      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=231723503664453&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own Jotform</a>
+    </div>
+  </div>
+</form><script type="text/javascript">JotForm.ownerView=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.43002"></script>
+<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.43002"></script>
