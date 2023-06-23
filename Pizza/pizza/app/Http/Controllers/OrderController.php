@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\user_data;
 use App\Models\order;
+use App\Models\bill_ditails;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -32,9 +35,24 @@ class OrderController extends Controller
 
         $user_data = array('user_name'=>$request['user_name'],'email'=>$request['email'],'contact_number'=>$request['contact_number'],'addre'=>$request['addre']);
         
-        $order_details=[];
+        $user_datasave = user_data::save_data_user($user_data);
 
+        
+
+        $order_details=[];
         $p_total = 0;
+
+        function generateRandomString($length = 10) {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $charactersLength = strlen($characters);
+            $randomString = '';
+            for ($i = 0; $i < $length; $i++) {
+                $randomString .= $characters[random_int(0, $charactersLength - 1)];
+            }
+            return $randomString;
+        }
+
+        $order_id = generateRandomString();
 
         for($i=0;$i<=2;$i++)
         {
@@ -44,23 +62,38 @@ class OrderController extends Controller
 
                 $onep_total = $request['pizza_quntity_'.$i] * $request['pizza_size_'.$i]; 
 
-                array_push($order_details,['pizza_quntity'=>$request['pizza_quntity_'.$i],'pizza_size'=>$request['pizza_size_'.$i],'total'=>$onep_total]);
+                array_push($order_details,['user_id'=>$user_datasave, 'order_uniq_id'=>$order_id,'pizza_quntity'=>$request['pizza_quntity_'.$i],'pizza_size'=>$request['pizza_size_'.$i],'total'=>$onep_total]);
 
             }
         }
 
+        
+       $bill_data= order::save_data_order($order_details);
+       
+       
         $delevery_charg = $request['Delivery'];
-
         $total = $p_total + $delevery_charg;
+        $bill_ditails=['user_id'=>$user_datasave,'order_uniq_id'=>$order_id,'Delivery_satate' => 1,'Pizza_total'=>$p_total,'Delivery_charg'=>$delevery_charg,'total'=>$total];
+        $bill_data= bill_ditails::save_data_bill($bill_ditails);
 
-        $bill_ditails=['Delivery_satate' => 1,'P_total'=>$p_total,'Delivery_charg'=>$delevery_charg,'total'=>$total];
+        // echo "<pre>";
+        // print_r($user_data);
+        // print_r($order_details);
+        // print_r($bill_ditails);
+        // echo "</pre>";
+        // exit;
 
+        // $order_all_ditails = DB::table('user_datas as ud')->
+        //     select('ud.*','orders.*','bd.*')
+        //     ->rightjoin('orders','ud.id','=','orders.user_id')
+        //     ->rightjoin('bill_ditails as bd','bd.user_id','=','orders.user_id')
+        //     ->where('ud.id','=', $user_datasave)->get();
 
-        $datasave = Order::save_data($user_data);
-
-        // return $datasave;
-        exit;
-
+        //     echo "<pre>";
+        //     print_r($order_all_ditails);
+        //     echo "</pre>";
+        //     exit;
+        return  $bill_data;
     }
 
     /**

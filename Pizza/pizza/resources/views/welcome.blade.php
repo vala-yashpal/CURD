@@ -13,43 +13,6 @@ $pizza_item_menu_array=[
 //     ['id'=>1,'name'=>]
 // ]
 
-
-   
-//     foreach ($pizza_item_menu_array as $key => $value){ 
-//             // echo $key . " => [<br>";
-//         foreach ( $value as $key1=> $value1){ 
-
-//             //echo "<pre>";
-//             if(is_array($value1)){
-//                 // echo $key1 . "=>[<br>";
-
-//                 foreach ($value1 as $key2 => $value2) {
-                   
-
-//                     if(is_array($value2)){
-//                         // echo $key2 . "=>[<br>";
-
-//                         foreach ($value2 as $key3 => $value3) {
-//                             // echo $value2[$key3] ."<br>";
-//                         }
-//                     }
-//                     // echo "]<br><br>";
-//                 }
-//             }else{
-//                 print_r($value[$key1]);
-//             }
-//             // echo "</pre>";
-//         }
-//     //    echo "] ,<br><br>";
-//     }
-   
-// // exit;
-                          
-
-// echo "<pre>";
-// print_r($pizza_item_menu_array);
-// echo "</pre>";
-// exit;
 ?>
 
 <!DOCTYPE html>
@@ -712,20 +675,17 @@ $pizza_item_menu_array=[
         function validation_f() {
 
             // console.log("caled");
-            
             // Retrieving the values of form elements 
             var user_name = document.rform.user_name.value;
             var email = document.rform.email.value;
             var contact_number = document.rform.contact_number.value;
             var addre = document.rform.addre.value;
 
-            console.log(user_name);
-            console.log(email);
-            console.log(contact_number);
-            console.log(addre);
+            // console.log(user_name);
+            // console.log(email);
+            // console.log(contact_number);
+            // console.log(addre);
             // return false;
-
-            
             // Defining error variables with a default value
             var nameErr = emailErr = mobileErr = addErr  = true;
             
@@ -827,17 +787,12 @@ $pizza_item_menu_array=[
         
 
         $(document).on('submit','#order_form',function(){ 
-            
             var result = {};
-
             $.each($('#order_form').serializeArray(), function () {
                             result[this.name] = this.value;
                         });
-
             // result = $('#order_form').serializeArray();
-
             console.log(result);
-
             fetch("http://127.0.0.1:8000/api/order",{
                     method: 'POST',
                     headers: {

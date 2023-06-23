@@ -12,10 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
+
+            // $table->engine = 'InnoDB';
+
             $table->id();
+            $table->integer('user_id');
+            $table->integer('pizza_quntity');
+            $table->integer('pizza_size');
+            $table->integer('total');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

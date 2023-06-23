@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('bill_ditails', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unsigned();
+            $table->integer('order_id')->unsigned();
+            $table->integer('Delivery_satate');
+            $table->integer('Pizza_total');
+            $table->integer('Delivery_charg');
+            $table->integer('total');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('user_datas')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
