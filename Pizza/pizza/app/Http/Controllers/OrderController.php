@@ -83,17 +83,14 @@ class OrderController extends Controller
         // echo "</pre>";
         // exit;
 
-        // $order_all_ditails = DB::table('user_datas as ud')->
-        //     select('ud.*','orders.*','bd.*')
-        //     ->rightjoin('orders','ud.id','=','orders.user_id')
-        //     ->rightjoin('bill_ditails as bd','bd.user_id','=','orders.user_id')
-        //     ->where('ud.id','=', $user_datasave)->get();
+        $order_all_ditails = DB::table('user_datas as ud')->
+            select('ud.*','orders.*','bd.*')
+            ->rightjoin('orders','ud.id','=','orders.user_id')
+            ->rightjoin('bill_ditails as bd','bd.user_id','=','orders.user_id')
+            ->where('ud.id','=', $user_datasave)->get();
 
-        //     echo "<pre>";
-        //     print_r($order_all_ditails);
-        //     echo "</pre>";
-        //     exit;
-        return  $bill_data;
+            // exit;
+        return  $order_all_ditails;
     }
 
     /**

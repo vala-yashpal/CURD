@@ -8,9 +8,8 @@ $pizza_item_menu_array=[
     ['item_id'=>'3','name'=>'9 cheese pizza','image'=>'https://www.jotform.com/uploads/LaurelWood/form_files/pizza-assortment-set_1284-20110.jpg', 'price_details'=>['small'=>['sub_item_id'=>'3','type'=>'Small','price'=>'350'],'Medium'=>['sub_item_id'=>'3','type'=>'Medium','price'=>'450'],'Large'=>['sub_item_id'=>'3','type'=>'Large','price'=>'550']]]
 ];
 
-
 // $pizza_item_menu_array = [
-//     ['id'=>1,'name'=>]
+//     ['id'=>1,'name'=>'']
 // ]
 
 ?>
